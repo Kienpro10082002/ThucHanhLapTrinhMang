@@ -6,3 +6,4 @@
 
 ##### Các bài thực hành
 >   * **TH01**: Kết nối cơ sở dữ liệu.
+>   * **TH02**: Ghi và đọc File.
