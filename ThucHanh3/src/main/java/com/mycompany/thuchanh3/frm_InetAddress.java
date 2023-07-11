@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.net.*;
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -58,6 +59,20 @@ public class frm_InetAddress extends javax.swing.JFrame {
         txt_baiTap4_IP = new javax.swing.JTextField();
         btn_baiTap4_findIP = new javax.swing.JButton();
         btn_baiTap4_exit = new javax.swing.JButton();
+        dialog_baiTap5 = new javax.swing.JDialog();
+        lbl_baiTap5_IP = new javax.swing.JLabel();
+        txt_baiTap5_IP = new javax.swing.JTextField();
+        btn_baiTap5_checkIP = new javax.swing.JButton();
+        btn_baiTap5_exit = new javax.swing.JButton();
+        lbl_baiTap5_result = new javax.swing.JLabel();
+        txt_baiTap5_result = new javax.swing.JTextField();
+        dialog_baiTap6 = new javax.swing.JDialog();
+        lbl_baiTap6_tenMien1 = new javax.swing.JLabel();
+        txt_baiTap6_tenMien1 = new javax.swing.JTextField();
+        btn_baiTap6_checkIP1 = new javax.swing.JButton();
+        btn_baiTap6_exit = new javax.swing.JButton();
+        lbl_baiTap6_tenMien2 = new javax.swing.JLabel();
+        txt_baiTap6_tenMien2 = new javax.swing.JTextField();
         jMenuBar_InetAddress = new javax.swing.JMenuBar();
         jMenu_system = new javax.swing.JMenu();
         jMenu_functions = new javax.swing.JMenu();
@@ -65,8 +80,8 @@ public class frm_InetAddress extends javax.swing.JFrame {
         jMenuItem_findDomainByIP = new javax.swing.JMenuItem();
         jMenuItem_findIPbyDomain = new javax.swing.JMenuItem();
         jMenuItem_findLocalIP = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem_checkIP_part2 = new javax.swing.JMenuItem();
+        jMenuItem_checkSameIP = new javax.swing.JMenuItem();
 
         dialog_baiTap1.setTitle("Chương trình kiểm tra IP");
         dialog_baiTap1.setSize(new java.awt.Dimension(708, 160));
@@ -324,6 +339,150 @@ public class frm_InetAddress extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
+        dialog_baiTap5.setTitle("Chương trình kiểm tra IP");
+        dialog_baiTap5.setSize(new java.awt.Dimension(604, 210));
+
+        lbl_baiTap5_IP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_baiTap5_IP.setText("Nhập địa chỉ IP cần kiểm tra");
+
+        txt_baiTap5_IP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        btn_baiTap5_checkIP.setBackground(java.awt.SystemColor.activeCaption);
+        btn_baiTap5_checkIP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_baiTap5_checkIP.setText("Kiểm tra");
+        btn_baiTap5_checkIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_baiTap5_checkIPActionPerformed(evt);
+            }
+        });
+
+        btn_baiTap5_exit.setBackground(java.awt.SystemColor.activeCaption);
+        btn_baiTap5_exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_baiTap5_exit.setText("Thoát");
+        btn_baiTap5_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_baiTap5_exitActionPerformed(evt);
+            }
+        });
+
+        lbl_baiTap5_result.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_baiTap5_result.setText("Kết quả");
+
+        txt_baiTap5_result.setEditable(false);
+        txt_baiTap5_result.setBackground(java.awt.SystemColor.activeCaption);
+        txt_baiTap5_result.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        javax.swing.GroupLayout dialog_baiTap5Layout = new javax.swing.GroupLayout(dialog_baiTap5.getContentPane());
+        dialog_baiTap5.getContentPane().setLayout(dialog_baiTap5Layout);
+        dialog_baiTap5Layout.setHorizontalGroup(
+            dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialog_baiTap5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dialog_baiTap5Layout.createSequentialGroup()
+                        .addComponent(lbl_baiTap5_result, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_baiTap5_result, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_baiTap5_exit)
+                        .addGap(36, 36, 36))
+                    .addGroup(dialog_baiTap5Layout.createSequentialGroup()
+                        .addComponent(lbl_baiTap5_IP)
+                        .addGap(18, 18, 18)
+                        .addGroup(dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dialog_baiTap5Layout.createSequentialGroup()
+                                .addComponent(btn_baiTap5_checkIP)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txt_baiTap5_IP))))
+                .addContainerGap())
+        );
+        dialog_baiTap5Layout.setVerticalGroup(
+            dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialog_baiTap5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_baiTap5_IP)
+                    .addComponent(txt_baiTap5_IP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btn_baiTap5_checkIP)
+                .addGap(18, 18, 18)
+                .addGroup(dialog_baiTap5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_baiTap5_result)
+                    .addComponent(txt_baiTap5_result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_baiTap5_exit))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        dialog_baiTap6.setTitle("Chương trình kiểm tra IP của 2 tên miền");
+        dialog_baiTap6.setSize(new java.awt.Dimension(681, 200));
+
+        lbl_baiTap6_tenMien1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_baiTap6_tenMien1.setText("Tên miền thứ nhất");
+
+        txt_baiTap6_tenMien1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        btn_baiTap6_checkIP1.setBackground(java.awt.SystemColor.activeCaption);
+        btn_baiTap6_checkIP1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_baiTap6_checkIP1.setText("Kiểm tra");
+        btn_baiTap6_checkIP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_baiTap6_checkIP1ActionPerformed(evt);
+            }
+        });
+
+        btn_baiTap6_exit.setBackground(java.awt.SystemColor.activeCaption);
+        btn_baiTap6_exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_baiTap6_exit.setText("Thoát");
+        btn_baiTap6_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_baiTap6_exitActionPerformed(evt);
+            }
+        });
+
+        lbl_baiTap6_tenMien2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_baiTap6_tenMien2.setText("Tên miền thứ hai");
+
+        txt_baiTap6_tenMien2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        javax.swing.GroupLayout dialog_baiTap6Layout = new javax.swing.GroupLayout(dialog_baiTap6.getContentPane());
+        dialog_baiTap6.getContentPane().setLayout(dialog_baiTap6Layout);
+        dialog_baiTap6Layout.setHorizontalGroup(
+            dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialog_baiTap6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_baiTap6_checkIP1)
+                .addGap(182, 182, 182)
+                .addComponent(btn_baiTap6_exit)
+                .addGap(141, 141, 141))
+            .addGroup(dialog_baiTap6Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_baiTap6_tenMien1)
+                    .addComponent(lbl_baiTap6_tenMien2))
+                .addGap(18, 18, 18)
+                .addGroup(dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_baiTap6_tenMien2)
+                    .addComponent(txt_baiTap6_tenMien1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        dialog_baiTap6Layout.setVerticalGroup(
+            dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialog_baiTap6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_baiTap6_tenMien1)
+                    .addComponent(txt_baiTap6_tenMien1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_baiTap6_tenMien2)
+                    .addComponent(txt_baiTap6_tenMien2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(dialog_baiTap6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_baiTap6_checkIP1)
+                    .addComponent(btn_baiTap6_exit))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Thực hành lập trình mạng");
         setBackground(java.awt.SystemColor.controlLtHighlight);
@@ -369,11 +528,21 @@ public class frm_InetAddress extends javax.swing.JFrame {
         });
         jMenu_functions.add(jMenuItem_findLocalIP);
 
-        jMenuItem5.setText("Kiểm tra IP");
-        jMenu_functions.add(jMenuItem5);
+        jMenuItem_checkIP_part2.setText("Kiểm tra IP");
+        jMenuItem_checkIP_part2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_checkIP_part2ActionPerformed(evt);
+            }
+        });
+        jMenu_functions.add(jMenuItem_checkIP_part2);
 
-        jMenuItem6.setText("Kiểm tra 2 tên miền");
-        jMenu_functions.add(jMenuItem6);
+        jMenuItem_checkSameIP.setText("Kiểm tra 2 tên miền");
+        jMenuItem_checkSameIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_checkSameIPActionPerformed(evt);
+            }
+        });
+        jMenu_functions.add(jMenuItem_checkSameIP);
 
         jMenuBar_InetAddress.add(jMenu_functions);
 
@@ -418,8 +587,11 @@ public class frm_InetAddress extends javax.swing.JFrame {
             if (host != null) {
                 if (IP.contains(".")) {
                     JOptionPane.showMessageDialog(null, "Đây là IPV4");
-                } else {
+                } else if(IP.contains(":")) {
                     JOptionPane.showMessageDialog(null, "Đây là IPV6");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Địa chỉ IP của bạn nhập sai!!!");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Địa chỉ IP của bạn nhập sai!!!");
@@ -512,6 +684,7 @@ public class frm_InetAddress extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_btn_baiTap3_exitActionPerformed
 
+    //Viết chương trình cho biết địa chỉ IP của máy cục bộ
     private void btn_baiTap4_findIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_baiTap4_findIPActionPerformed
         try {
             InetAddress addr = InetAddress.getLocalHost();
@@ -548,6 +721,85 @@ public class frm_InetAddress extends javax.swing.JFrame {
         dialog_baiTap4.setVisible(false);
         this.setVisible(true);
     }//GEN-LAST:event_btn_baiTap4_exitActionPerformed
+
+    //Viết chương trình kiểm tra địa chỉ IP là cục bộ, loopback hay multicast
+    private void btn_baiTap5_checkIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_baiTap5_checkIPActionPerformed
+        try{
+            InetAddress add =  InetAddress.getByName(txt_baiTap5_IP.getText());
+            InetAddress localHost = InetAddress.getLocalHost();
+            if(add.equals(localHost)) {
+                txt_baiTap5_result.setText("Đây là địa chỉ Localhost");
+            }
+            else if(add.isMulticastAddress()) {
+                txt_baiTap5_result.setText("Đây là địa chỉ Mutilcaset");
+            }
+            else if(add.isLoopbackAddress()) {
+                txt_baiTap5_result.setText("Đây là địa chỉ Loopback");
+            }
+            else {
+                txt_baiTap5_result.setText("Không thấy gì đặc biệt");
+            }
+        } catch(UnknownHostException ex) {
+            JOptionPane.showMessageDialog(null, "Lỗi!!!" + ex.toString());
+        }
+    }//GEN-LAST:event_btn_baiTap5_checkIPActionPerformed
+
+    private void btn_baiTap5_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_baiTap5_exitActionPerformed
+        dialog_baiTap5.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_baiTap5_exitActionPerformed
+
+    private void jMenuItem_checkIP_part2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_checkIP_part2ActionPerformed
+        //Hiển thị Dialog
+        dialog_baiTap5.setVisible(true);
+        jMenuBar_InetAddress.setEnabled(false);
+        dialog_baiTap5.setLocationRelativeTo(this);
+        //Không hiển thị Dialog
+        dialog_baiTap5.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Hiển thị trang chính khi Dialog đóng
+                jMenuBar_InetAddress.setEnabled(true);
+                dialog_baiTap5.setVisible(false);
+            }
+        });
+    }//GEN-LAST:event_jMenuItem_checkIP_part2ActionPerformed
+
+    private void btn_baiTap6_checkIP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_baiTap6_checkIP1ActionPerformed
+        InetAddress add1[], add2[];
+        try {
+            add1 = InetAddress.getAllByName(txt_baiTap6_tenMien1.getText());
+            add2 = InetAddress.getAllByName(txt_baiTap6_tenMien2.getText());
+            if(Arrays.equals(add1, add2)) {
+                JOptionPane.showMessageDialog(null, "Hai tên miền có cùng IP");
+            } else {
+                JOptionPane.showMessageDialog(null, "Hai tên miền không cùng IP");
+            }
+        } catch(UnknownHostException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+    }//GEN-LAST:event_btn_baiTap6_checkIP1ActionPerformed
+
+    private void btn_baiTap6_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_baiTap6_exitActionPerformed
+        dialog_baiTap6.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_baiTap6_exitActionPerformed
+
+    private void jMenuItem_checkSameIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_checkSameIPActionPerformed
+        //Hiển thị Dialog
+        dialog_baiTap6.setVisible(true);
+        jMenuBar_InetAddress.setEnabled(false);
+        dialog_baiTap6.setLocationRelativeTo(this);
+        //Không hiển thị Dialog
+        dialog_baiTap6.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Hiển thị trang chính khi Dialog đóng
+                jMenuBar_InetAddress.setEnabled(true);
+                dialog_baiTap6.setVisible(false);
+            }
+        });
+    }//GEN-LAST:event_jMenuItem_checkSameIPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -594,14 +846,20 @@ public class frm_InetAddress extends javax.swing.JFrame {
     private javax.swing.JButton btn_baiTap3_findDomain;
     private javax.swing.JButton btn_baiTap4_exit;
     private javax.swing.JButton btn_baiTap4_findIP;
+    private javax.swing.JButton btn_baiTap5_checkIP;
+    private javax.swing.JButton btn_baiTap5_exit;
+    private javax.swing.JButton btn_baiTap6_checkIP1;
+    private javax.swing.JButton btn_baiTap6_exit;
     private javax.swing.JDialog dialog_baiTap1;
     private javax.swing.JDialog dialog_baiTap2;
     private javax.swing.JDialog dialog_baiTap3;
     private javax.swing.JDialog dialog_baiTap4;
+    private javax.swing.JDialog dialog_baiTap5;
+    private javax.swing.JDialog dialog_baiTap6;
     private javax.swing.JMenuBar jMenuBar_InetAddress;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem_checkIP;
+    private javax.swing.JMenuItem jMenuItem_checkIP_part2;
+    private javax.swing.JMenuItem jMenuItem_checkSameIP;
     private javax.swing.JMenuItem jMenuItem_findDomainByIP;
     private javax.swing.JMenuItem jMenuItem_findIPbyDomain;
     private javax.swing.JMenuItem jMenuItem_findLocalIP;
@@ -612,6 +870,10 @@ public class frm_InetAddress extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_baiTap2_tenMien;
     private javax.swing.JLabel lbl_baiTap3_tenMien;
     private javax.swing.JLabel lbl_baiTap4_IP;
+    private javax.swing.JLabel lbl_baiTap5_IP;
+    private javax.swing.JLabel lbl_baiTap5_result;
+    private javax.swing.JLabel lbl_baiTap6_tenMien1;
+    private javax.swing.JLabel lbl_baiTap6_tenMien2;
     private javax.swing.JList<String> list_baiTap2_IP;
     private javax.swing.JScrollPane scrollPane__baiTap2_listIP;
     private javax.swing.JTextField txt_baiTap1_IP;
@@ -619,5 +881,9 @@ public class frm_InetAddress extends javax.swing.JFrame {
     private javax.swing.JTextField txt_baiTap3_IP;
     private javax.swing.JTextField txt_baiTap3_tenMien;
     private javax.swing.JTextField txt_baiTap4_IP;
+    private javax.swing.JTextField txt_baiTap5_IP;
+    private javax.swing.JTextField txt_baiTap5_result;
+    private javax.swing.JTextField txt_baiTap6_tenMien1;
+    private javax.swing.JTextField txt_baiTap6_tenMien2;
     // End of variables declaration//GEN-END:variables
 }
