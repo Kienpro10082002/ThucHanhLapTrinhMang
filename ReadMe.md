@@ -8,3 +8,4 @@
 >   * **TH01**: Kết nối cơ sở dữ liệu.
 >   * **TH02**: Luồn nhập xuất (FILE).
 >   * **TH03**: InetAddress.
+>   * **TH04**: Xử lý tiến trình.
