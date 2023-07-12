@@ -9,3 +9,6 @@
 >   * **TH02**: Luồn nhập xuất (FILE).
 >   * **TH03**: InetAddress.
 >   * **TH04**: Xử lý tiến trình.
+>   * **TH05**: TCP Socket, FTP.
+>   * **TH06**: UDP Socket.
+>   * **TH07**: Lập trình đối tượng phân tán (RMI).
