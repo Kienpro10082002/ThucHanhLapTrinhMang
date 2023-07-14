@@ -26,14 +26,12 @@ public class Thread2 extends Thread{
                 shareData.notifyAll();
                 
                 //Điều kiện dừng Thread 2
-                if(i < shareData.nameList.length - 1) {
-                    try {
-                        shareData.wait();
-                    } catch(InterruptedException ex) {
-                        Logger.getLogger(Thread2.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                try {
+                    shareData.wait();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Thread2.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
                 System.out.println("Address: " + shareData.addressList[i]);
             }
         }
