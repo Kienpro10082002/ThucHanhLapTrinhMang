@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tcpserver;
+package tcpserver;
 
+import java.net.Socket;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -30,7 +31,14 @@ public class ServerThread implements Runnable{
     public void run() {
         try {
             String chuoi = in.nextLine().trim();
-            chuoi = chuoi.toUpperCase();
+
+            if (isStringInteger(chuoi)) {
+                int soNguyen = Integer.parseInt(chuoi);
+                chuoi = Integer.toBinaryString(soNguyen);
+            } else {
+                chuoi = "Have not Integer";
+            }
+            
             out.println(chuoi);
         } catch(Exception ex) {
             System.out.println(name + "has departed");
@@ -39,5 +47,16 @@ public class ServerThread implements Runnable{
                 socket.close();
             } catch (IOException e) {}
         }
+    }
+    
+    // Kiểm tra số nguyên
+    public boolean isStringInteger(String str) {
+        // Kiểm tra xem chuỗi có chứa ký tự không phải là số hay không
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -11,4 +11,5 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>com.mycompany.tcpclient.TCPClient</exec.mainClass>
     </properties>
+    <name>TCPClient(BaiSo01)</name>
 </project>

@@ -16,7 +16,7 @@ public class ReadingSocketInfo {
             InetAddress localHost = InetAddress.getLocalHost();
             int localPort = getLocalPort();
 
-            System.out.println("Thông tin Socket máy cục bộ: ");
+            System.out.println("Socket's information of the local machine: ");
             System.out.println("IP: " + localHost.getHostAddress());
             System.out.println("Port: " + localPort);
 
@@ -24,11 +24,11 @@ public class ReadingSocketInfo {
             InetAddress remoteHost = InetAddress.getByName("example.com");
             int remotePort = 80;
 
-            System.out.println("Thông tin Socket máy từ xa trên cổng 80: ");
+            System.out.println("Socket's information of the remote machine on port 80: ");
             System.out.println("IP: " + remoteHost.getHostAddress());
             System.out.println("Port: " + remotePort);
         } catch (UnknownHostException e) {
-            System.out.println("Không thể xác định địa chỉ máy từ xa.");
+            System.out.println("The remote machine address could not be determined.");
         }
     }
 
@@ -38,7 +38,7 @@ public class ReadingSocketInfo {
             s.bind(null);
             return s.getLocalPort();
         } catch (IOException e) {
-            System.out.println("Không thể kết nối tới localhost.");
+            System.out.println("Unable to connect to localhost.");
         }
         return -1;
     }

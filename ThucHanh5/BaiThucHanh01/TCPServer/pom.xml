@@ -11,4 +11,5 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>com.mycompany.tcpserver.TCPServer</exec.mainClass>
     </properties>
+    <name>TCPServer(BaiSo01)</name>
 </project>
