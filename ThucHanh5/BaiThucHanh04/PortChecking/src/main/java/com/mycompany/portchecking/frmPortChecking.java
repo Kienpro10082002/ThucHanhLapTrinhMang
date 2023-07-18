@@ -115,7 +115,7 @@ public class frmPortChecking extends javax.swing.JFrame {
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
         Socket s;
-        for(int port = 1024; port <= 65536; port++) {
+        for(int port = 3300; port <= 3310; port++) {
             try {
                 s = new Socket(this.txtDomain.getText(), port);
                 this.txtPorts.setText(this.txtPorts.getText() + "\n" + port);
