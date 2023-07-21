@@ -126,6 +126,7 @@ public class frmClient extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     // Lưu ý là Domain không nên truyền bất kì tên domain nào.
     private void btnTruyenChuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTruyenChuoiActionPerformed
